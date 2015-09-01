@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<form method="post" action="boardWrite.jsp">
+		<table align="center" border="1" cellspacing="1" cellpadding="5">
+			<tr>
+				<td>제목</td>
+				<td><input type="text" size="10" name="title"></td>
+			</tr>
+			<tr>
+				<td>글쓴이</td>
+				<td><input type="text" size="10" name="username"></td>
+			</tr>
+			<tr>
+				<td>내용</td>
+				<td><textarea rows="4" cols="50" name="content"></textarea></td>
+			</tr>
+			
+			<tr>
+				<td>성별</td>
+				<td><input type="radio" name="sex" value="남">남 <input
+					type="radio" name="sex" value="여">여</td>
+			</tr>
+			<tr>
+				<td>비밀번호</td>
+				<td><input type="password" size="10" name="password"></td>
+			</tr>
+			<tr>
+				<td>공개여부</td>
+				<td><select name="open">
+						<option selected>비공개</option>
+						<option>공개</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td colspan=2 align=center><input type=submit value="확인">
+					<input type=reset value="취소"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

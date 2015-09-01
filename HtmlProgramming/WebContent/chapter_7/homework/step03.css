@@ -1,0 +1,21 @@
+.pull-left { float: left; }
+
+li { list-style: none; }
+
+.outer-menu-item {
+	float: left;
+	position: relative;	
+}
+
+.outer-menu-item:hover {
+    background: black;
+    color: white
+}
+
+.menu-title {
+	display: block;
+	height: 30px; 
+	line-height: 30px; 
+	text-align: center; 
+	padding: 5px 20px;
+}

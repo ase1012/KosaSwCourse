@@ -49,7 +49,7 @@ public class CommentDao {
 				comment.setWriter(rs.getString("comment_writer"));
 				comment.setDate(rs.getDate("comment_date"));
 				comment.setContent(rs.getString("comment_content"));
-				comment.setMusicNo(rs.getInt("music_no"));
+				comment.setMusicNo(rs.getInt(musicNo));
 				return comment;
 			}
 		});

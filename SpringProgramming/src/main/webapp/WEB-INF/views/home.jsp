@@ -132,7 +132,7 @@
 						<li><a href="product/list" target="iframe">상품 게시판</a></li>
 						<li><a href="board/list" target="iframe">일반 게시판</a></li>				
 						<li><a href="photo/list" target="iframe">사진 게시판</a></li>
-						<li><a href="file/list" target="iframe">자료 게시판</a></li>
+						<li><a href="music/list" target="iframe">노래 게시판</a></li>
 					</ul>
 				</div>
 				<div id="content">
@@ -141,7 +141,7 @@
 			</div>
 			
 			<div id="footer">
-				<h5>Your Name</h5>
+				<h5>An Sae_eun</h5>
 			</div>
 		</div>
 	</body>

@@ -108,29 +108,34 @@
 			<pre>${music.content}</pre>
 		</div>
 		
-		<div>
+		<div><br/><br/>
 			<h4>댓글</h4>
-		
-		<table>
-			<tr>
-				<th style="width:50px">작성자</th>
-				<th style="width:60px">날짜</th>
-			</tr>
-			<tr>
-				<th>내용</th>
-			</tr>
-			
-			<c:forEach var="comment" items="${list}">
-				<tr>
-					<td>${comment.writer}</td>
-					<td>${comment.date}</td>
-				</tr>
-				<tr>
-					<td>${comment.content}</td>
-				</tr>
-			</c:forEach>
-		</table>
-		
+			<div>
+				<table>
+					<c:forEach var="comment" items="${list}">
+						<tr>
+							<td>${comment.writer}</td>
+							<td>${comment.date}</td>
+						</tr>
+						<tr>
+							<td>${comment.content}</td>
+						</tr>
+					</c:forEach>
+				</table>
+			</div>
+			<div>
+				<form method="post" action="write" enctype="multipart/form-data">
+					<table>
+						<tr>
+							<td><input type="text" name="writer" style="width:100px;"/></td>
+						</tr>
+						<tr>
+							<td><textarea name="content" rows="3" cols="85"></textarea></td>
+							<td><input type="submit" value="댓글등록" style="height:60px;"/></td>					
+						</tr>
+					</table>
+				</form>
+			</div>
 		</div>
 		
 		<div id="buttonGroup">

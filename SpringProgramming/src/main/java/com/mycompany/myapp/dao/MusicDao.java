@@ -85,9 +85,9 @@ public class MusicDao {
 		return music;
 	}
 
-/*	public int update(Music music) {
-		String sql = "update music set music_singer=?, music_price=? where music_no=?";
-		int rows = jdbcTemplate.update(sql, music.getSinger(), music.getPrice(), music.getNo());
+	public int update(Music music) {
+		String sql = "update music set music_title=?, music_price=? where music_no=?";
+		int rows = jdbcTemplate.update(sql, music.getTitle(), music.getPrice(), music.getNo());
 		return rows;
 	}
 
@@ -95,7 +95,7 @@ public class MusicDao {
 		String sql = "delete from music where music_no=?";
 		int rows = jdbcTemplate.update(sql, musicNo);
 		return rows;
-	}*/
+	}
 
 	public int selectCount() {
 		String sql = "select count(*) from music";

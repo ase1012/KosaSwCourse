@@ -15,8 +15,8 @@ public class CommentService {
 		commentDao.selectList(musicNo);
 	}
 	
-	public void add(int musicNo, Comment comment) {
-		commentDao.insert(musicNo, comment);
+	public void add(Comment comment) {
+		commentDao.insert(comment);
 	}
 	
 	public void modify(Comment comment) {

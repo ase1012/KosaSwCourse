@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +13,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.mycompany.myapp.dto.Comment;
 import com.mycompany.myapp.dto.Music;
 import com.mycompany.myapp.service.MusicService;
+import com.mycompany.myapp.service.CommentService;
+
 
 @Controller
 public class MusicController {
@@ -21,7 +25,7 @@ public class MusicController {
 
 	@Autowired
 	private MusicService musicService;
-
+	
 	@RequestMapping("/music/list")
 	public String list(@RequestParam(defaultValue = "1") int pageNo, Model model, HttpSession session) {
 		logger.info("pageNo: " + pageNo);
@@ -107,32 +111,42 @@ public class MusicController {
 
 		return "redirect:/music/list";
 	}
+	
+	/*@RequestMapping("/music/writecomment")
+	public String writecomment(Comment comment) {
+		logger.info("writecomment()");
 
-/*	@RequestMapping("/board/updateForm")
-	public String updateForm(int boardNo, Model model) {
-		Board board = boardService.getBoard(boardNo);
-		model.addAttribute("board", board);
-		return "board/updateForm";
+		commentService.add(comment);
+
+		return "redirect:/music/detail";
+	}
+	*/
+	@RequestMapping("/music/updateForm")
+	public String updateForm(int musicNo, Model model) {
+		Music music = musicService.getMusic(musicNo);
+		model.addAttribute("music", music);
+		return "music/updateForm";
 	}
 
 	
-	@RequestMapping("/board/update")
-	public String update(Board board) {
-		boardService.modify(board);
-		return "redirect:/board/detail?boardNo=" + board.getNo();
-	}*/
+	@RequestMapping("/music/update")
+	public String update(Music music) {
+		musicService.modify(music);
+		return "redirect:/music/detail?musicNo=" + music.getNo();
+	}
 	
 	@RequestMapping("/music/detail")
 	public String detail(int musicNo, Model model) {
 		Music music = musicService.getMusic(musicNo);
 		model.addAttribute("music", music);
+		
 		return "music/detail";
 	}
 
-	/*@RequestMapping("/board/delete")
-	public String delete(int boardNo) {
-		boardService.remove(boardNo);
-		return "redirect:/board/list";
-	}*/
+	@RequestMapping("/music/delete")
+	public String delete(int musicNo) {
+		musicService.remove(musicNo);
+		return "redirect:/music/list";
+	}
 
 }

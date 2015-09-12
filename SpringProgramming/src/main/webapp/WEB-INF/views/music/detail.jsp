@@ -107,7 +107,7 @@
 			<span class="title">내용:</span> <br/>
 			<pre>${music.content}</pre>
 		</div>
-		
+		<%-- 
 		<div><br/><br/>
 			<h4>댓글</h4>
 			<div>
@@ -124,7 +124,8 @@
 				</table>
 			</div>
 			<div>
-				<form method="post" action="write" enctype="multipart/form-data">
+				<form method="post" action="writecomment" enctype="multipart/form-data">
+				<input type="hidden" name="musicNo" value="${music.no}"/>
 					<table>
 						<tr>
 							<td><input type="text" name="writer" style="width:100px;"/></td>
@@ -137,9 +138,11 @@
 				</form>
 			</div>
 		</div>
-		
+		 --%>
 		<div id="buttonGroup">
 			<a href="list?pageNo=${pageNo}">목록</a>
+			<a href="updateForm?musicNo=${music.no}">수정</a>
+			<a href="delete?musicNo=${music.no}">삭제</a>
 		</div>		
 	</body>
 </html>

@@ -26,7 +26,7 @@ public class MusicService {
 		Music music = musicDao.selectByPk(musicNo);
 		return music;
 	}
-	/*
+
 	public void modify(Music music) {
 		musicDao.update(music);
 	}
@@ -34,7 +34,7 @@ public class MusicService {
 	public void remove(int musicNo) {
 		musicDao.delete(musicNo);
 	}	
-	*/
+
 	public int getTotalMusicNo() {
 		int rows = musicDao.selectCount();
 		return rows;

@@ -61,7 +61,6 @@
 				background-color: lightgray;
 			}
 		</style>
-		
 		<script type="text/javascript">
 			function sendData() {
 				//값의 유효성 검사
@@ -90,20 +89,20 @@
 		<h4>게시물 보기</h4>
 		<form id="modifyForm" name="modifyForm" method="post" action="update">		
 			<span class="title">번호:</span> 
-			<span class="content">${"music.no"}</span> 
-			<input type="hidden" name="no" value=${"music.no"}/><br/>
+			<span class="content">${music.no}</span> 
+			<input type="hidden" name="no" value="${music.no}"/><br/>
 			
 			<span class="title">제목:</span> 
 			<input id="title" type="text" name="title" value="${music.title}"/> <br/>
 			
 			<span class="title">가수:</span>
-			<span class="content">${"music.singer"}</span> <br/>
+			<span class="content">${music.singer}</span> <br/>
 			
 			<span class="title">가격:</span> 
-			<input id="title" type="number" name="price" value="${music.price}"/> <br/>
+			<input id="price" type="number" name="price" value="${music.price}"/> <br/>
 			
 			<span class="title">내용:</span> <br/>
-			<span class="content">${"music.content"}</span> <br/>
+			<span class="content">${music.content}</span> <br/>
 		</form>
 		
 		<div id="buttonGroup">
